@@ -19,7 +19,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-gray-900 w-full py-1 text-gray-300 fixed top-0">
+            <header className="bg-gray-900 w-full py-1 text-gray-300 fixed top-0 z-50">
                 <nav className="hidden md:flex items-center justify-around max-w-screen-lg w-full mx-auto">
                     <Image
                         src="https://www.apple.com/ac/globalnav/6/en_GB/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_apple_image__cxwwnrj0urau_small.svg"
@@ -49,7 +49,7 @@ export default function Header() {
             <motion.div 
                 initial={{height: 0, visibility: "hidden"}}
                 animate={isOpen?{height: "100vh", visibility: "visible"}:{height: 0, visibility: "hidden"}}
-                className="md:hidden top-10 fixed h-screen bg-gray-900 w-full py-2 px-5"
+                className="md:hidden top-10 fixed h-screen bg-gray-900 w-full py-2 px-5 z-50"
             >
                 <div className="w-full bg-gray-700 p-2 text-gray-400 flex rounded-md">
                     <SearchIcon width={20} />
