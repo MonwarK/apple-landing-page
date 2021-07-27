@@ -22,19 +22,16 @@ export default function Home() {
           image="https://www.apple.com/euro/home/q/screens_alt/images/heroes/iphone-12/iphone_12_updated__jepm2xpxncuy_largetall.jpg" 
           color="black" 
         />
-        <Fade left>
-          <HomeSection 
-            title="iPhone 12 pro" 
-            image="https://www.apple.com/v/home/aa/images/heroes/iphone-12-pro/iphone_12_pro_us__e5oyysg4k0ya_largetall.jpg" 
-          />
-        </Fade>
-      
-        <Fade right>
-          <HomeSection 
-            title="iPad pro" 
-            image="https://www.apple.com/v/home/aa/images/heroes/ipad-pro/hero_ipad_pro__gl982dtu49im_largetall.jpg" 
-          />
-        </Fade>
+
+        <HomeSection 
+          title="iPhone 12 pro" 
+          image="https://www.apple.com/v/home/aa/images/heroes/iphone-12-pro/iphone_12_pro_us__e5oyysg4k0ya_largetall.jpg" 
+        />
+    
+        <HomeSection 
+          title="iPad pro" 
+          image="https://www.apple.com/v/home/aa/images/heroes/ipad-pro/hero_ipad_pro__gl982dtu49im_largetall.jpg" 
+        />
 
         <div className="md:grid grid-flow-row-dense grid-cols-2 bg-white p-5 -mt-2">
           <HomeCategory 
