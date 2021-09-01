@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { SearchIcon, ShoppingBagIcon, MenuIcon } from "@heroicons/react/outline"
+import { SearchIcon, ShoppingBagIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import { motion } from "framer-motion"
 import { useState } from "react"
 
@@ -35,7 +35,14 @@ export default function Header() {
                 </nav>
 
                 <nav className="md:hidden flex items-center justify-between max-w-screen-lg w-full mx-auto px-4">
-                    <MenuIcon width={20} onClick={() => setIsOpen(!isOpen)} />
+                    {
+                        !isOpen ? (
+                            <MenuIcon className="cursor-pointer" width={20} onClick={() => setIsOpen(!isOpen)} />
+                        )
+                        : (
+                            <XIcon className="cursor-pointer" width={20} onClick={() => setIsOpen(!isOpen)} />
+                        )
+                    }
                     <Image
                         src="https://www.apple.com/ac/globalnav/6/en_GB/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_apple_image__cxwwnrj0urau_small.svg"
                         height={40}
@@ -47,11 +54,11 @@ export default function Header() {
             </header>
 
             <motion.div 
-                initial={{height: 0, visibility: "hidden"}}
-                animate={isOpen?{height: "100vh", visibility: "visible"}:{height: 0, visibility: "hidden"}}
-                className="md:hidden top-10 fixed h-screen bg-gray-900 w-full py-2 px-5 z-50"
+                initial={{height: 0}}
+                animate={isOpen?{height: "100vh"}:{height: 0}}
+                className={`md:hidden overflow-hidden top-10 fixed h-screen bg-gray-900 w-full z-50`}
             >
-                <div className="w-full bg-gray-700 p-2 text-gray-400 flex rounded-md">
+                <div className="w-[95%] bg-gray-700 my-2 mx-auto p-2 text-gray-400 flex rounded-md">
                     <SearchIcon width={20} />
                     <input className="bg-transparent ml-2 flex-1 focus:outline-none text-white" type="text" placeholder="Search apple.com" />
                 </div>
